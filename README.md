@@ -2,6 +2,12 @@
 
 Este projeto utiliza Python juntamente com as bibliotecas Pandas, NumPy e Dash para criar um dashboard interativo que exibe a evolução de casos novos, casos acumulados, óbitos novos e óbitos acumulados relacionados à Covid-19.
 
+## Sumário
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+  
 ## Instalação
 
 1. Certifique-se de ter o Python instalado em sua máquina. Você pode baixá-lo em [python.org](https://www.python.org/downloads/).
