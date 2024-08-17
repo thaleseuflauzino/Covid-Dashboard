@@ -149,12 +149,12 @@ def update_output(value):
                      color_discrete_sequence=px.colors.sequential.RdBu)
         fig.update_traces(textposition='inside', textinfo='percent+label')
 
-    if value == 'Casos Acumulados por Região':
+    elif value == 'Casos Acumulados por Região':
         fig = px.pie(piedataset, names='Region', values='Casos Novos', title="GRAFICO ESCOLHIDO",
                      color_discrete_sequence=px.colors.sequential.RdBu)
         fig.update_traces(textposition='inside', textinfo='percent+label')
 
-    if value == 'Casos Novos por Estado':
+    elif value == 'Casos Novos por Estado':
         fig = px.line(dfdataset, x='Data', y='Casos Novos', color='Estado',
                       markers=True, title="GRAFICO ESCOLHIDO")
         fig.update_yaxes(title='Quantidade de Casos Novos',
@@ -162,7 +162,7 @@ def update_output(value):
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
                          ticks='outside', tickfont_color='green')
 
-    if value == 'Casos Acumulados por Estado':
+    elif value == 'Casos Acumulados por Estado':
         fig = px.line(whiledataset, x='Data1', y='Casos Acumulados', color='Estado',
                       markers=True, title="GRAFICO ESCOLHIDO")
         fig.update_yaxes(title='Quantidade de Casos Acumulados',
@@ -170,7 +170,7 @@ def update_output(value):
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
                          ticks='outside', tickfont_color='green')
 
-    if value == 'Obitos Novos por Estado':
+    elif value == 'Obitos Novos por Estado':
         fig = px.line(dfdataset, x='Data', y='Obitos Novos', color='Estado',
                       markers=True, title="GRAFICO ESCOLHIDO")
         fig.update_yaxes(title='Quantidade de Obitos Novos',
@@ -178,11 +178,17 @@ def update_output(value):
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
                          ticks='outside', tickfont_color='green')
 
-    if value == 'Obitos Acumulados por Estado':
+    elif value == 'Obitos Acumulados por Estado':
         fig = px.line(whiledataset, x='Data1', y='Obitos Acumulados', color='Estado',
                       markers=True, title='Grafico Escolhido')
         fig.update_yaxes(title='Quantidade de Obitos Acumulados',
                          title_font_color='red', ticks='outside', tickfont_color='green')
+        fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
+                         ticks='outside', tickfont_color='green')
+
+    else:
+        fig = px.line(title="Região não especificada")
+        fig.update_yaxes(title_font_color='red', ticks='outside', tickfont_color='green')
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
                          ticks='outside', tickfont_color='green')
 
@@ -297,6 +303,13 @@ def update_output(value):
                          title_font_color='red', ticks='outside', tickfont_color='green')
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
                          ticks='outside', tickfont_color='green')
+    
+    else:
+        fig = px.line(title="Região não especificada")
+        fig.update_yaxes(title='Quantidade de Casos Acumulados',
+                         title_font_color='red', ticks='outside', tickfont_color='green')
+        fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
+                         ticks='outside', tickfont_color='green')
 
     return fig
 
@@ -342,6 +355,13 @@ def update_output(value):
     elif value == 'Centro-Oeste':
         fig = px.line(whiledatasetCentrooeste, x='Data Centro Oeste', y='Obitos Acumulados Centro Oeste', color='Estados Centro Oeste',
                       markers=True, title="Óbitos Acumulados de Covid19 no Brasil por Região Desejada")
+        fig.update_yaxes(title='Quantidade de Óbitos Acumulados',
+                         title_font_color='red', ticks='outside', tickfont_color='green')
+        fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
+                         ticks='outside', tickfont_color='green')
+
+    else:
+        fig = px.line(title="Região não especificada")
         fig.update_yaxes(title='Quantidade de Óbitos Acumulados',
                          title_font_color='red', ticks='outside', tickfont_color='green')
         fig.update_xaxes(title_text='Dias do ano', title_font_color='red',
