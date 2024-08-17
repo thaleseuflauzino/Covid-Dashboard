@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 
 app = Dash(__name__)
-dataset = pd.read_csv('COVID19ee.csv', sep=",")
+dataset = pd.read_csv('database.csv', sep=",")
 tabela = dataset.values.tolist()
 
 casosnovos = []
