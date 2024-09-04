@@ -27,11 +27,17 @@ body {
 }
 
 .dccDropdown {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #aaaaaa;
     background-color: #aaaaaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    width: 50%;
+    padding: 10px;
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #fdfdfd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
