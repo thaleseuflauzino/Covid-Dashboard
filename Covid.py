@@ -7,6 +7,7 @@ app = Dash(__name__)
 
 # Ler o dataset
 dataset = pd.read_csv('database.csv', sep=",")
+
 # Converter para lista de listas
 tabela = dataset.values.tolist()
 
@@ -106,17 +107,32 @@ df_centrooeste = pd.DataFrame(whiledatasetCentrooeste)
 # Definir layout do Dash
 app.layout = html.Div(className='container', children=[
     html.H1('Coronavírus (COVID-19) no Brasil.'),
-    html.H2('Gráficos sobre COVID-19 no Brasil entre Janeiro e Abril.'),
+    html.H2('Gráficos sobre COVID-19 no Brasil entre Janeiro e Abril de 2022.'),
     html.H3('Escolha o Gráfico referente ao dado desejado.'),
-    dcc.Dropdown(['Obitos Acumulados por Região', 'Casos Acumulados por Região', 'Casos Novos por Estado', 'Casos Acumulados por Estado', 'Obitos Novos por Estado', 'Obitos Acumulados por Estado'], value='NYC', id='Grafico-1', className='dccDropdown'),
+    dcc.Dropdown(
+        ['Obitos Acumulados por Região', 'Casos Acumulados por Região', 'Casos Novos por Estado', 'Casos Acumulados por Estado', 'Obitos Novos por Estado', 'Obitos Acumulados por Estado'], 
+        value='NYC', 
+        id='Grafico-1', 
+        className='dccDropdown'
+    ),
     dcc.Graph(id='graph1', className='dccGraph'),
     html.H2('Casos Acumulados de COVID19 no Brasil por Região'),
     html.H3('Escolha qual região deseja ver os dados'),
-    dcc.Dropdown(['Sudeste', 'Sul', 'Centro-Oeste', 'Norte', 'Nordeste'], value='NYC', id='Grafico-2', className='dccDropdown'),
+    dcc.Dropdown(
+        ['Sudeste', 'Sul', 'Centro-Oeste', 'Norte', 'Nordeste'], 
+        value='NYC', 
+        id='Grafico-2', 
+        className='dccDropdown',
+    ),
     dcc.Graph(id='graph2', className='dccGraph'),
     html.H2('Óbitos Acumulados de COVID19 no Brasil por Região'),
     html.H3('Escolha qual região deseja ver os dados'),
-    dcc.Dropdown(['Sudeste', 'Sul', 'Centro-Oeste', 'Norte', 'Nordeste'], value='NYC', id='Grafico-3', className='dccDropdown'),
+    dcc.Dropdown(
+        ['Sudeste', 'Sul', 'Centro-Oeste', 'Norte', 'Nordeste'], 
+        value='NYC', 
+        id='Grafico-3', 
+        className='dccDropdown'
+    ),
     dcc.Graph(id='graph3', className='dccGraph')
 ])
 
@@ -212,6 +228,7 @@ def update_graph1(value):
     return fig
 
 # Callback para o Gráfico 2
+@app.callback(Output('graph2', 'figure'), Input('Grafico-2', 'value'))
 def update_graph2(value):
     datasets = {
         'Sudeste': df_sudeste, 
@@ -236,6 +253,8 @@ def update_graph2(value):
     
     # Personalização do plano de fundo
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=False)
     
     return fig
 
@@ -265,6 +284,8 @@ def update_graph3(value):
     
     # Personalização do plano de fundo
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=False)
     
     return fig
 
