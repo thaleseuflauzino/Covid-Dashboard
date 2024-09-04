@@ -1,0 +1,92 @@
+body {
+    color: #333;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #aaaaaa;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #333;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #aaaaaa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dccDropdown {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    background-color: #aaaaaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dccDropdown:hover {
+    border-color: #aaaaaa;
+}
+
+.dccGraph {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Assegura que o gráfico ocupe toda a largura disponível */
+    height: 500px; /* Define uma altura mínima adequada para os gráficos */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .dccGraph {
+        padding: 10px;
+    }
+}
+
+.dccDropdown {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    background-color: #aaaaaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dccDropdown:hover {
+    border-color: #aaaaaa;
+}
+
+.dccGraph {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .dccGraph {
+        padding: 10px;
+    }
+}
